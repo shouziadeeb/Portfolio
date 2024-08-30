@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import Map from "../Map Section/Map";
+import Map from "../MapSection/Map";
 
 const About = ({ prop, isDark }) => {
   return (

@@ -1,13 +1,11 @@
 import { useContext, useRef, useState } from "react";
-import { Header } from "./components/Header Section/Header";
-import { Section1 } from "./components/Section 1 Hero/Section1";
-import Section2 from "./components/Section 2 Hero 2/Section2";
-import Footer from "./components/Footer Section/Footer";
-import Section3 from "./components/Section 3 Skills/Section3";
-import Email from "./components/Section 4 Email me/Email";
-import About from "./components/About me/About";
-import SideBar from "./components/SideBar/SideBar";
-import { StoreContext, StoreProvider } from "./store/ContextApi";
+import { Header } from "./components/HeaderSection/Header";
+import { Section1 } from "./components/Section1Hero/Section1";
+import Section2 from "./components/Section2Hero2/Section2";
+import Footer from "./components/FooterSection/Footer";
+import Section3 from "./components/Section3Skills/Section3";
+import Email from "./components/Section4Emailme/Email";
+import About from "./components/Aboutme/About";
 
 function App() {
   let prevScrollpos = window.pageYOffset;
