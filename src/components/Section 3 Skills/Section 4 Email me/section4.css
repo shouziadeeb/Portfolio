@@ -1,0 +1,308 @@
+.email_main_container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.email_main_container h1 {
+  font-size: 80px;
+  margin-bottom: 30px;
+  padding-bottom: 60px;
+  transition: 0.8s;
+}
+
+.email_main_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-width: 400px;
+  width: 40%;
+  border-top: 8px solid orange;
+  height: 60%;
+  background-color: rgb(28, 28, 28);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px orange;
+  transition: 0.8s;
+}
+
+.email_main_container form input {
+  width: 90%;
+  border: none;
+  background-color: #000000;
+  height: 70px;
+  border-radius: 10px;
+  color: gray;
+  padding: 15px;
+  border-bottom: 2px solid;
+}
+.email_main_container form textarea {
+  height: 100px;
+  border: none;
+  padding: 15px;
+  color: white;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #000000;
+  border-bottom: 2px solid gainsboro;
+}
+.email_main_container form button {
+  color: aliceblue;
+  font-size: x-large;
+  background-color: #071125;
+  width: 90%;
+  height: 60px;
+  cursor: pointer;
+}
+
+.whatsapp_div {
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+  width: 300px;
+  transition: 0.8s;
+}
+
+.whatsapp_div a button {
+  padding: 10px 20px;
+  color: green;
+  background-color: black;
+  border-radius: 50px;
+  border: 2px solid orange;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.whatsapp_div a button:hover {
+  scale: 110%;
+  transition: 0.3s;
+}
+.whatsapp_div a {
+  text-decoration: none;
+}
+.whatsapp_div a button span {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1440px) {
+  .email_main_container {
+    text-align: center;
+  }
+  .email_main_container h1 {
+    font-size: 2.5rem;
+  
+  }
+  .email_main_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-width: 500px;
+    width: 50%;
+    border-top: 5px solid orange;
+    height: 70%;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0px 0px 5px orange;
+  }
+  .email_main_container form input {
+    width: 90%;
+    border: none;
+    background-color: #000000;
+    height: 2.5rem;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.9rem;
+    border-bottom: 3px solid;
+  }
+  .email_main_container form button {
+    color: aliceblue;
+    font-size: 1rem;
+    background-color: #071125;
+    width: 90%;
+    height: 2rem;
+  }
+  .whatsapp_div {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8.5rem;
+  }
+  .whatsapp_div a button {
+    padding: 0.4rem 1.4rem;
+    font-size: 1rem;
+  }
+  .whatsapp_div a button span {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 1100px) {
+  .email_main_container {
+    text-align: center;
+  }
+  .email_main_container h1 {
+    font-size: 2.2rem;
+    /* display: none; */
+  }
+  .email_main_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.7rem;
+    min-width: 550px;
+    width: 40%;
+    border-top: 5px solid orange;
+    height: 60%;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0px 0px 5px orange;
+  }
+  .email_main_container form input {
+    width: 90%;
+    border: none;
+    background-color: #000000;
+    height: 2rem;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.9rem;
+    border-bottom: 3px solid;
+  }
+  .email_main_container form button {
+    color: aliceblue;
+    font-size: 1.2rem;
+    background-color: #071125;
+    width: 90%;
+    height: 2rem;
+  }
+  .whatsapp_div {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+  }
+  .whatsapp_div a button {
+    padding: 0.2rem 2.2rem;
+    font-size: 1.2rem;
+  }
+  .whatsapp_div a button span {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .email_main_container {
+    text-align: center;
+  }
+  .email_main_container h1 {
+    font-size: 2.2rem;
+  }
+  .email_main_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-width: 400px;
+    width: 40%;
+    border-top: 5px solid orange;
+    height: 60%;
+    padding: 1rem;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 0px 0px 1px orange;
+    transition: 0.6s;
+  }
+  .email_main_container form input {
+    width: 90%;
+    border: none;
+    background-color: #000000;
+    height: 2.5rem;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.9rem;
+    border-bottom: 3px solid;
+  }
+  .whatsapp_div {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+  }
+  .whatsapp_div a button {
+    padding: 0.2rem 2rem;
+    font-size: 1rem;
+  }
+  .whatsapp_div a button span {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .email_main_container {
+    text-align: center;
+  }
+  .email_main_container h1 {
+    font-size: 1.5rem;
+  }
+  .email_main_container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    min-width: 350px;
+    width: 40%;
+    /* border-top: 4px solid orange; */
+    height: 50%;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 4px orange; */
+  }
+  .email_main_container form input {
+    width: 90%;
+    border: none;
+    background-color: #000000;
+    height: 3.5rem;
+    border-radius: 5px;
+    color: gray;
+    padding: 0.5rem;
+    border-bottom: 2px solid;
+  }
+  .whatsapp_div {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+  }
+  .whatsapp_div a button {
+    padding: 0.6rem 2rem;
+    font-size: 1.2rem;
+  }
+  .whatsapp_div a button span {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+}
