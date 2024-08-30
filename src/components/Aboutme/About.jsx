@@ -5,13 +5,17 @@ import Map from "../MapSection/Map";
 const About = ({ prop, isDark }) => {
   return (
     <>
-      <div className="about" ref={prop} style={{ color: isDark ? "white" : "black" }}>
+      <div
+        className="about"
+        ref={prop}
+        style={{ color: isDark ? "white" : "black" }}
+      >
         <div className="about-title">
-          <h1 >About me</h1>
+          <h1>About me</h1>
         </div>
         <div className="about-section">
           <div className="about-left">
-            <img src="../public/images/My new image.jpg" alt="" />
+            <img src="images/My new image.jpg" />
           </div>
 
           <div className="about-right">
@@ -20,11 +24,7 @@ const About = ({ prop, isDark }) => {
                 {" "}
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ver
               </p>
-              <p>
-                {" "}
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-               
-              </p>
+              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div className="about-skills">
               <div className="about-skill">
@@ -62,7 +62,7 @@ const About = ({ prop, isDark }) => {
             <p>HAPPY CLIENTS</p>
           </div>
           <hr />
-        </div>  
+        </div>
         <div className="map">
           <h1>Find me Here</h1>
           <Map />
