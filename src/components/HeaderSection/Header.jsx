@@ -45,7 +45,7 @@ export const Header = ({
       >
         <nav>
           <img
-            src="../src/assets/shouzab.png"
+            src="public/images/shouzab.png"
             alt=""
             style={{
               filter: !isDark && "brightness(0%)",
