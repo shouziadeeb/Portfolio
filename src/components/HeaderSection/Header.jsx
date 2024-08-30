@@ -40,12 +40,12 @@ export const Header = ({
         style={{
           background: isDark ? "#00000038" : "#ffffff63",
           backdropFilter: !isDark && "blur(1rem)",
-          boxShadow: !isDark && "0 0 3px black"
+          boxShadow: !isDark && "0 0 3px black",
         }}
       >
         <nav>
           <img
-            src="public/images/shouzab.png"
+            src="images/shouzab.png"
             alt=""
             style={{
               filter: !isDark && "brightness(0%)",
