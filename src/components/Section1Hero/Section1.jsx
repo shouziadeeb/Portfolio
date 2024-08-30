@@ -1,6 +1,6 @@
 import "./section1.css";
 
-export const Section1 = ({ prop,isDark }) => {
+export const Section1 = ({ prop, isDark }) => {
   return (
     <section className="first_section" ref={prop}>
       <div className="left_section">
@@ -16,7 +16,7 @@ export const Section1 = ({ prop,isDark }) => {
         </p>
       </div>
       <div className="right_section">
-        <img src="public\images\undraw_firmware_re_fgdy.svg" alt="" />
+        <img src="images/undraw_firmware_re_fgdy.svg" />
       </div>
     </section>
   );
