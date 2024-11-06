@@ -1,20 +1,47 @@
 import React from "react";
 import "./section2.css";
 
-function Section2({ prop }) {
-  let ran = "active";
-  const handleFocus = () => {};
+function Section2({ prop, isDark }) {
+  const handleClick = (link) => {
+    if (link) {
+      window.location.href = link;
+    }
+  };
+  const projects = [
+    {
+      name: "FOOD DELIVERY APP",
+      title:
+        "Developed a food delivery web application that allows users tobrowse restaurant menus, add items to a cart, and place ordersonline. Implemented a clean, responsive design for seamless usage onboth desktop and mobile devices.",
+      img: "/images/Screenshot 2024-11-06 101154.png",
+      link: "https://foodappbyreact.netlify.app/",
+    },
+    {
+      name: "MUSIC PLAYER",
+      img: "/images/Screenshot 2024-11-06 101154.png",
+      title:
+        "Developed a food delivery web application that allows users tobrowse restaurant menus, add items to a cart, and place ordersonline. Implemented a clean, responsive design for seamless usage onboth desktop and mobile devices.",
+    },
+  ];
   return (
     <>
-      <section className="section2" ref={prop}>
-        <div className="left_section">
-          <h1>This is my first PROJECT</h1>
-        </div>
-        <div className="right_section2">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPS87gesz5rMANSJxJIsEWjGL033eQAp8L_g&s"
-            alt=""
-          />
+      <section
+        className="section2"
+        ref={prop}
+        style={{ color: isDark ? "white" : "black" }}
+      >
+        <h1>This is my PROJECTS</h1>
+        <div className="project_list">
+          {projects.map((project) => (
+            <div className="projects">
+              <img
+                src={project.img}
+                alt=""
+                onClick={() => handleClick(project.link)}
+              />
+              <h5>{project.name}</h5>
+              <p>{project.title}</p>
+            </div>
+          ))}
         </div>
       </section>
     </>

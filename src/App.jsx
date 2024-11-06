@@ -49,7 +49,7 @@ function App() {
     >
       <Header {...props} isDark={isDark} handleDarkMode={handleDarkMode} />
       <Section1 prop={section1} isDark={isDark} />
-      {/* <Section2 prop={section2} isDark={isDark} /> */}
+      <Section2 prop={section2} isDark={isDark} />
       <Section3 prop={section3} isDark={isDark} />
       <Email prop={section4} isDark={isDark} />
       <About prop={aboutSection} isDark={isDark} />

@@ -30,10 +30,10 @@ function Footer({ isDark }) {
               </ul>
             </div>
           </div>
-          <div>
-            <h3>
-              Contact us at <span>1234567990</span>
-            </h3>
+          <div> 
+            <p>
+              Contact us at - <span style={{fontWeight:"bold"}}>{"9756304445"}</span>
+            </p>
           </div>
         </footer>
       </div>
