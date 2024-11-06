@@ -6,11 +6,20 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
-  border-radius: 10px;
+  z-index: 1001;
+  border-radius: 10px 0 0 10px;
   transition: 0.5s;
-  /* display: none; */
   overflow: hidden;
+}
+.sidebar_closer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  height: 100%;
+  transition: 0.5s;
+  /* overflow: hidden; */
+  background-color: rgba(10, 5, 5, 0.032);
 }
 .content {
   width: 100%;

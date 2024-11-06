@@ -29,7 +29,7 @@ function Section2({ prop, isDark }) {
         ref={prop}
         style={{ color: isDark ? "white" : "black" }}
       >
-        <h1>This is my PROJECTS</h1>
+        <h1  style={{fontWeight:"bolder"}}>PROJECTS</h1>
         <div className="project_list">
           {projects.map((project) => (
             <div className="projects">

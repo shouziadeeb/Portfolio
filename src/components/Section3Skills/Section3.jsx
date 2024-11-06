@@ -38,7 +38,7 @@ function Section3({ prop, isDark }) {
       style={{ color: isDark ? "white" : "black" }}
     >
       <div className="heading">
-        <h1>This is my skills </h1>
+        <h1>SKILLS </h1>
       </div>
       <div className="my_container">
         {skillsList.map((item, index) => (
