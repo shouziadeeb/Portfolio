@@ -30,9 +30,10 @@ function Footer({ isDark }) {
               </ul>
             </div>
           </div>
-          <div> 
+          <div>
             <p>
-              Contact us at - <span style={{fontWeight:"bold"}}>{"9756304445"}</span>
+              Contact us at -{" "}
+              <span style={{ fontWeight: "bold" }}>{"9756304445"}</span>
             </p>
           </div>
         </footer>

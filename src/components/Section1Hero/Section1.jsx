@@ -1,9 +1,27 @@
+import { useEffect, useRef } from "react";
 import "./section1.css";
+import { gsap } from "gsap";
 
 export const Section1 = ({ prop, isDark }) => {
+  const heroRef = useRef(null);
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      { scale: 0.5, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out" }
+    );
+
+    gsap.fromTo(
+      textRef.current,
+      { scale: 0.5, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out" }
+    );
+  }, []);
   return (
     <section className="first_section" ref={prop}>
-      <div className="left_section">
+      <div className="left_section" ref={textRef}>
         <h2>
           Hello ! <span className="span-heading">Myself,</span>
         </h2>
@@ -15,7 +33,7 @@ export const Section1 = ({ prop, isDark }) => {
           for detail.
         </p>
       </div>
-      <div className="right_section">
+      <div className="right_section" ref={imageRef}>
         <img src="images/undraw_firmware_re_fgdy.svg" />
       </div>
     </section>

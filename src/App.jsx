@@ -17,7 +17,10 @@ function App() {
     } else {
       document.querySelector(".header_main").style.top = "-8rem";
     }
+    console.log("prevScrollpos1=>", prevScrollpos);
     prevScrollpos = currentScrollPos;
+    console.log("prevScrollpos=>", prevScrollpos);
+    console.log("currentScrollPos=>", currentScrollPos);
   };
 
   const section1 = useRef();
@@ -33,7 +36,7 @@ function App() {
     section4,
     aboutSection,
   };
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const handleDarkMode = () => {
     setIsDark((prev) => !prev);

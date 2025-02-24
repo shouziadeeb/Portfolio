@@ -29,7 +29,7 @@ function Section2({ prop, isDark }) {
         ref={prop}
         style={{ color: isDark ? "white" : "black" }}
       >
-        <h1  style={{fontWeight:"bolder"}}>PROJECTS</h1>
+        <h1 style={{ fontWeight: "bolder" }}>PROJECTS</h1>
         <div className="project_list">
           {projects.map((project) => (
             <div className="projects">
@@ -38,8 +38,10 @@ function Section2({ prop, isDark }) {
                 alt=""
                 onClick={() => handleClick(project.link)}
               />
-              <h5>{project.name}</h5>
-              <p>{project.title}</p>
+              <div className="project_text">
+                <h5>{project.name}</h5>
+                <p>{project.title}</p>
+              </div>
             </div>
           ))}
         </div>
