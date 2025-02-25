@@ -9,6 +9,19 @@ export const Section1 = ({ prop, isDark }) => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
+  useEffect(() => {
+    gsap.from(textRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+    });
+    gsap.from(imageRef.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+    });
+  });
+
   return (
     <section className="first_section" ref={prop}>
       <div className="left_section" ref={textRef}>

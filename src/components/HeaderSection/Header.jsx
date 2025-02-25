@@ -1,7 +1,8 @@
 import { IoMdMenu } from "react-icons/io";
 import "./header.css";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SideBar from "../SideBar/SideBar";
+import gsap from "gsap";
 
 export const Header = ({
   section1,
@@ -25,6 +26,18 @@ export const Header = ({
     { name: "About ", ref: aboutSection },
   ];
 
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.from(".my_logo", {
+      y: -20,
+      opacity: 0,
+      duration: 0.5,
+    }).from(".nav_link_name", {
+      y: -20,
+      opacity: 0,
+      duration: 0.5,
+    });
+  });
   return (
     <>
       <SideBar
@@ -45,6 +58,7 @@ export const Header = ({
       >
         <nav>
           <img
+            className="my_logo"
             src="images/shouzab.png"
             alt=""
             style={{
@@ -61,7 +75,7 @@ export const Header = ({
               }}
             />
           </div>
-          <ul>
+          <ul className="nav_link_name">
             {list.map((item, index) => (
               <li
                 style={{ color: isDark ? "white" : "black" }}
