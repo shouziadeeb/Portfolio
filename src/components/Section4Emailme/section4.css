@@ -56,7 +56,7 @@
   font-size: x-large;
   background-color: #071125;
   width: 90%;
-  height: 60px;
+  height: 70px;
   cursor: pointer;
 }
 
@@ -104,7 +104,6 @@
   }
   .email_main_container h1 {
     font-size: 2.5rem;
-  
   }
   .email_main_container form {
     display: flex;
@@ -187,9 +186,8 @@
   .email_main_container form button {
     color: aliceblue;
     font-size: 1.2rem;
-    background-color: #071125;
     width: 90%;
-    height: 2rem;
+    height: 2.5rem;
   }
   .whatsapp_div {
     position: static;

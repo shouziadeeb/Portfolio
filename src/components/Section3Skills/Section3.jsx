@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./section3.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 function Section3({ prop, isDark }) {
+  useEffect(() => {
+    gsap.from(prop.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: prop.current,
+    });
+  });
   const skillsList = [
     {
       skill: "React JS",

@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./section2.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 function Section2({ prop, isDark }) {
   const handleClick = (link) => {
     if (link) {
@@ -22,6 +25,14 @@ function Section2({ prop, isDark }) {
         "Developed a food delivery web application that allows users tobrowse restaurant menus, add items to a cart, and place ordersonline. Implemented a clean, responsive design for seamless usage onboth desktop and mobile devices.",
     },
   ];
+  useEffect(() => {
+    gsap.from(prop.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: prop.current,
+    });
+  });
   return (
     <>
       <section

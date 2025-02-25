@@ -1,9 +1,24 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaWhatsapp } from "react-icons/fa";
 import "./section4.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Email = ({ prop, isDark }) => {
   const formData = useRef();
+
+  useEffect(() => {
+    gsap.from(prop.current, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: prop.current,
+    });
+  });
+
   const handleFormEmial = (e) => {
     e.preventDefault();
     console.log(formData.current);
