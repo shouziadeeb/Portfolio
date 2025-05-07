@@ -22,9 +22,15 @@ const About = ({ prop, isDark }) => {
             <div className="about-para">
               <p style={{ color: isDark ? "white" : "black" }}>
                 {" "}
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ver
+                I'm Shouzab Farooqui, a passionate Frontend Developer from the
+                vibrant city of Amroha, nestled in Uttar Pradesh. With roots in
+                the Arts Stream, I've carved my own path into the digital world,
+                blending creativity with clean, responsive code. Crafting
+                visually stunning and user-friendly web experiences is what I
+                love doing. Whether it’s building sleek interfaces or solving
+                tricky design challenges, I thrive on bringing ideas to life in
+                the browser. Let’s build something amazing together! 🚀
               </p>
-              <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div className="about-skills">
               <div className="about-skill">
@@ -48,19 +54,15 @@ const About = ({ prop, isDark }) => {
         </div>
         <div className="about-achievements">
           <div className="about-achievement">
-            <h1>10+</h1>
-            <p>YEARS of EXPERIENCE</p>
+            <h1>2+</h1>
+            <p>YEARS of SELF EXPERIENCE</p>
           </div>
           <hr />
           <div className="about-achievement">
-            <h1>90+</h1>
-            <p>PROJECT COMPLETED</p>
+            <h1>4+</h1>
+            <p>SELF PROJECT COMPLETED</p>
           </div>
           <hr />
-          <div className="about-achievement">
-            <h1>15+</h1>
-            <p>HAPPY CLIENTS</p>
-          </div>
           <hr />
         </div>
         <div className="map">

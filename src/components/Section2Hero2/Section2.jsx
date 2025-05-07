@@ -20,9 +20,10 @@ function Section2({ prop, isDark }) {
     },
     {
       name: "MUSIC PLAYER",
-      img: "/images/Screenshot 2024-11-06 101154.png",
+      img: "/images/Screenshot 2025-05-08 005504.png",
       title:
-        "Developed a food delivery web application that allows users tobrowse restaurant menus, add items to a cart, and place ordersonline. Implemented a clean, responsive design for seamless usage onboth desktop and mobile devices.",
+        "Recently I have created a music player web app where we can play and pause and next and prev ,volume up down and completely responsive. It is my second personal project,In this i used Context Api ", 
+        link: "https://shouzi-musicplayer.netlify.app/",
     },
   ];
   useEffect(() => {
