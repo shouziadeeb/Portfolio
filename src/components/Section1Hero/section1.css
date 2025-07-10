@@ -5,6 +5,8 @@
   align-items: center;
   padding: 5vw;
   justify-content: center;
+  max-width: 1260px;
+ 
 }
 .first_section .left_section {
   width: 50%;

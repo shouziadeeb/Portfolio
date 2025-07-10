@@ -58,7 +58,7 @@ function Section3({ prop, isDark }) {
             key={index}
             className="box"
             style={{
-              background: isDark ? "black" : "#F2F2F2",
+              // background: isDark ? "black" : "#F2F2F2",
               color: isDark ? "white" : "black",
             }}
           >

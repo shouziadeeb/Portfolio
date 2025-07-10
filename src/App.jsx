@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Header } from "./components/HeaderSection/Header";
 import { Section1 } from "./components/Section1Hero/Section1";
 import Section2 from "./components/Section2Hero2/Section2";
@@ -6,6 +6,7 @@ import Footer from "./components/FooterSection/Footer";
 import Section3 from "./components/Section3Skills/Section3";
 import Email from "./components/Section4Emailme/Email";
 import About from "./components/Aboutme/About";
+import AnimatedBackground from "./components/AnimatedBackground/AnimatedBackground";
 
 function App() {
   let prevScrollpos = window.pageYOffset;
@@ -41,15 +42,14 @@ function App() {
   const handleDarkMode = () => {
     setIsDark((prev) => !prev);
   };
-
-  const bgColor = isDark ? "#0a0a0aeb" : "white";
   return (
     <main
-      className="main_App_container"
+      className={`main_App_container ${isDark ? 'dark' : 'light'}`}
       style={{
-        background: bgColor,
+        background: 'transparent',
       }}
     >
+      <AnimatedBackground isDark={isDark} />
       <Header {...props} isDark={isDark} handleDarkMode={handleDarkMode} />
       <Section1 prop={section1} isDark={isDark} />
       <Section2 prop={section2} isDark={isDark} />
