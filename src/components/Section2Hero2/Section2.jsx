@@ -16,7 +16,7 @@ function Section2({ prop, isDark }) {
       title:
         "Developed a food delivery web application that allows users tobrowse restaurant menus, add items to a cart, and place ordersonline. Implemented a clean, responsive design for seamless usage onboth desktop and mobile devices.",
       img: "/images/Screenshot 2024-11-06 101154.png",
-      link: "https://foodappbyreact.netlify.app/",
+      link: "https://shouziadeeb.vercel.app/",
     },
     {
       name: "MUSIC PLAYER",
