@@ -2,12 +2,14 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   FaArrowRight,
+  FaBars,
   FaCodeBranch,
   FaExternalLinkAlt,
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
   FaPhoneAlt,
+  FaTimes,
   FaDownload,
 } from "react-icons/fa";
 
@@ -357,12 +359,54 @@ function AnimatedBackdrop() {
 }
 
 function Header({ activeSection, onNavigate }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [activeSection]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 920) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Go to top">
         SF
       </a>
-      <nav className="nav-links" aria-label="Primary navigation">
+      <button
+        type="button"
+        className="menu-toggle"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="primary-nav"
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        {menuOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+      </button>
+      <nav
+        id="primary-nav"
+        className={`nav-links${menuOpen ? " open" : ""}`}
+        aria-label="Primary navigation"
+      >
         {navigation.map((item) => (
           <a
             key={item.href}
@@ -371,6 +415,7 @@ function Header({ activeSection, onNavigate }) {
             aria-current={activeSection === item.href.slice(1) ? "page" : undefined}
             onClick={(event) => {
               event.preventDefault();
+              setMenuOpen(false);
               onNavigate(item.href.slice(1));
             }}
           >
