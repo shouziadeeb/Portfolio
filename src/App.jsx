@@ -116,7 +116,7 @@ const skillGroups = [
   },
   {
     title: "AI Tools",
-    skills: ["Cursor AI", "ChatGPT", "AI-powered Product Workflows"],
+    skills: ["Cursor AI", "ChatGPT","Claude AI", "AI-powered Product Workflows"],
   },
 ];
 
@@ -176,10 +176,12 @@ const featuredProjects = [
     ],
   },
   {
-    title: "Self AI Interview Platform",
-    liveUrl: "https://self-ai-interview.vercel.app",
+    title: "AI-Powered Mock Interview Platform",
+    liveUrl: "https://ai-interview-tau-eight.vercel.app/",
     githubUrl: "",
-    screenshot: createScreenshotUrl("https://self-ai-interview.vercel.app"),
+    screenshot: createScreenshotUrl(
+      "https://ai-interview-tau-eight.vercel.app/",
+    ),
     description:
       "AI-powered interview preparation platform for technical and behavioral rounds through dynamic AI-generated interview sessions.",
     highlights: [
@@ -188,7 +190,14 @@ const featuredProjects = [
       "Real-time feedback loop for iterative preparation",
       "Reusable component architecture with API optimization",
     ],
-    tags: ["Next.js", "TypeScript", "Gemini AI", "AI Integration", "Frontend Engineering"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Gemini AI",
+      "Grok AI",
+      "AI Integration",
+      "Frontend Engineering",
+    ],
   },
 ];
 
@@ -219,7 +228,13 @@ const secondaryProjects = [
       "Context API-driven global audio and player state",
       "Mobile-friendly responsive interface for media control",
     ],
-    tags: ["React.js", "Context API", "Audio Player", "State Management", "Frontend"],
+    tags: [
+      "React.js",
+      "Context API",
+      "Audio Player",
+      "State Management",
+      "Frontend",
+    ],
   },
 ];
 
@@ -237,13 +252,15 @@ function App() {
       if (!element) return;
 
       const targetTop =
-        window.scrollY + element.getBoundingClientRect().top - getHeaderOffset();
+        window.scrollY +
+        element.getBoundingClientRect().top -
+        getHeaderOffset();
 
       setActiveSection(sectionId);
       window.history.pushState(null, "", `#${sectionId}`);
       window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
     },
-    [getHeaderOffset]
+    [getHeaderOffset],
   );
 
   useEffect(() => {
@@ -290,7 +307,10 @@ function App() {
 
   useEffect(() => {
     const initialSectionId = window.location.hash.replace("#", "");
-    if (initialSectionId && navigation.some((item) => item.href === `#${initialSectionId}`)) {
+    if (
+      initialSectionId &&
+      navigation.some((item) => item.href === `#${initialSectionId}`)
+    ) {
       requestAnimationFrame(() => handleNavigate(initialSectionId));
     }
   }, [handleNavigate]);
@@ -304,7 +324,7 @@ function App() {
         programmingLanguage: project.tags,
         description: project.description,
       })),
-    []
+    [],
   );
 
   const structuredData = useMemo(
@@ -320,7 +340,7 @@ function App() {
       knowsAbout: skillGroups.flatMap((group) => group.skills),
       hasPart: projectSchema,
     }),
-    [projectSchema]
+    [projectSchema],
   );
 
   return (
@@ -340,7 +360,10 @@ function App() {
         <Contact />
       </main>
       <footer className="site-footer">
-        <p>Built by {profile.name}. Focused on accessible, production-ready interfaces.</p>
+        <p>
+          Built by {profile.name}. Focused on accessible, production-ready
+          interfaces.
+        </p>
       </footer>
     </div>
   );
@@ -400,7 +423,11 @@ function Header({ activeSection, onNavigate }) {
         aria-controls="primary-nav"
         onClick={() => setMenuOpen((open) => !open)}
       >
-        {menuOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+        {menuOpen ? (
+          <FaTimes aria-hidden="true" />
+        ) : (
+          <FaBars aria-hidden="true" />
+        )}
       </button>
       <nav
         id="primary-nav"
@@ -412,7 +439,9 @@ function Header({ activeSection, onNavigate }) {
             key={item.href}
             href={item.href}
             className={activeSection === item.href.slice(1) ? "active" : ""}
-            aria-current={activeSection === item.href.slice(1) ? "page" : undefined}
+            aria-current={
+              activeSection === item.href.slice(1) ? "page" : undefined
+            }
             onClick={(event) => {
               event.preventDefault();
               setMenuOpen(false);
@@ -452,10 +481,22 @@ function Hero() {
             >
               Resume <FaDownload aria-hidden="true" />
             </a>
-            <a className="icon-button" href={profile.github} target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
+            <a
+              className="icon-button"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open GitHub profile"
+            >
               <FaGithub aria-hidden="true" />
             </a>
-            <a className="icon-button" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="Open LinkedIn profile">
+            <a
+              className="icon-button"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open LinkedIn profile"
+            >
               <FaLinkedinIn aria-hidden="true" />
             </a>
           </div>
@@ -499,7 +540,11 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About" title="Practical frontend engineering for web and mobile products.">
+    <Section
+      id="about"
+      eyebrow="About"
+      title="Practical frontend engineering for web and mobile products."
+    >
       <div className="two-column">
         <Reveal className="content-card large">
           <p>
@@ -536,10 +581,18 @@ function About() {
 
 function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="Recent roles and delivery impact.">
+    <Section
+      id="experience"
+      eyebrow="Experience"
+      title="Recent roles and delivery impact."
+    >
       <div className="timeline">
         {experiences.map((item, index) => (
-          <Reveal className="experience-card" key={`${item.company}-${item.role}`} delay={index * 0.08}>
+          <Reveal
+            className="experience-card"
+            key={`${item.company}-${item.role}`}
+            delay={index * 0.08}
+          >
             <div className="experience-head">
               <div>
                 <h3>{item.role}</h3>
@@ -576,9 +629,17 @@ function Projects() {
       title="Production work that demonstrates architecture, scalability, and frontend impact."
     >
       <div className="projects-layout">
-        <div className="projects-grid" role="list" aria-label="Project showcase">
+        <div
+          className="projects-grid"
+          role="list"
+          aria-label="Project showcase"
+        >
           {allProjects.map((project, index) => (
-            <Reveal key={project.title} className="project-reveal" delay={index * 0.07}>
+            <Reveal
+              key={project.title}
+              className="project-reveal"
+              delay={index * 0.07}
+            >
               <ProjectCard project={project} />
             </Reveal>
           ))}
@@ -591,7 +652,6 @@ function Projects() {
 function ProjectCard({ project }) {
   return (
     <article className="project-card" role="listitem">
-      
       <div className="project-content">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
@@ -606,11 +666,21 @@ function ProjectCard({ project }) {
           ))}
         </div>
         <div className="project-actions">
-          <a className="button primary" href={project.liveUrl} target="_blank" rel="noreferrer">
+          <a
+            className="button primary"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             Live Demo <FaExternalLinkAlt aria-hidden="true" />
           </a>
           {project.githubUrl ? (
-            <a className="button" href={project.githubUrl} target="_blank" rel="noreferrer">
+            <a
+              className="button"
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub <FaCodeBranch aria-hidden="true" />
             </a>
           ) : null}
@@ -622,7 +692,11 @@ function ProjectCard({ project }) {
 
 function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills" title="Technology stack grouped by product responsibility.">
+    <Section
+      id="skills"
+      eyebrow="Skills"
+      title="Technology stack grouped by product responsibility."
+    >
       <div className="skills-grid">
         {skillGroups.map((group, index) => (
           <Reveal className="skill-card" key={group.title} delay={index * 0.05}>
@@ -641,10 +715,18 @@ function Skills() {
 
 function Achievements() {
   return (
-    <Section id="achievements" eyebrow="Achievements" title="Areas where the work goes beyond screens.">
+    <Section
+      id="achievements"
+      eyebrow="Achievements"
+      title="Areas where the work goes beyond screens."
+    >
       <div className="achievement-grid">
         {achievements.map((item, index) => (
-          <Reveal className="achievement-card" key={item.title} delay={index * 0.06}>
+          <Reveal
+            className="achievement-card"
+            key={item.title}
+            delay={index * 0.06}
+          >
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </Reveal>
@@ -656,11 +738,15 @@ function Achievements() {
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="Contact" title="Open to frontend engineering opportunities and product work.">
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Open to frontend engineering opportunities and product work."
+    >
       <Reveal className="contact-panel">
         <p>
-          For recruiter conversations, freelance work, or frontend product roles,
-          use any of the channels below.
+          For recruiter conversations, freelance work, or frontend product
+          roles, use any of the channels below.
         </p>
         <div className="contact-grid">
           <a href={`tel:${profile.phone.replace(/\s/g, "")}`}>
