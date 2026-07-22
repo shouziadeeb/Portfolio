@@ -194,7 +194,7 @@ const featuredProjects = [
       "Next.js",
       "TypeScript",
       "Gemini AI",
-      "Grok AI",
+      "Groq AI",
       "AI Integration",
       "Frontend Engineering",
     ],
