@@ -100,7 +100,7 @@ const skillGroups = [
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "REST APIs", "WebSockets"],
+    skills: ["Node.js", "Express.js", "REST APIs", "WebSockets", "Authentication", "Python", "fastAPI"],
   },
   {
     title: "Mobile",
@@ -108,7 +108,7 @@ const skillGroups = [
   },
   {
     title: "Database",
-    skills: ["MongoDB", "MySQL", "Supabase"],
+    skills: ["MongoDB", "MySQL", "Supabase", "PostgreSQL"],
   },
   {
     title: "Tools",
