@@ -15,13 +15,13 @@ import {
 
 const profile = {
   name: "Shouzab Farooqui",
-  role: "Frontend Engineer | React | Next.js | React Native",
+  role: "Full Stack Engineer | React | Next.js | React Native | TypeScript | NodeJS | ExpressJS | Python | FastAPI",
   phone: "+91 9756304445",
   email: "shouziadeeb123@gmail.com",
   github: "https://github.com/shouziadeeb",
   linkedin: "https://www.linkedin.com/in/shouzab-farooqui-1a0040298",
   summary:
-    "Frontend Engineer with experience building scalable web and mobile applications using React, Next.js, React Native, TypeScript, and modern frontend technologies.",
+    "Full Stack Engineer with experience building scalable web and mobile applications using React, Next.js, React Native, TypeScript, and modern backend technologies NodeJS, ExpressJS, Python, FastAPI.",
 };
 
 const navigation = [
@@ -70,7 +70,7 @@ const experiences = [
     ],
   },
   {
-    role: "Freelance Frontend Developer",
+    role: "Freelance Full Stack Developer",
     company: "Automify.in",
     mode: "Client Work",
     period: "Freelance",
@@ -337,7 +337,7 @@ function App() {
       "@context": "https://schema.org",
       "@type": "Person",
       name: profile.name,
-      jobTitle: "Frontend Engineer",
+      jobTitle: "Full Stack Engineer",
       email: profile.email,
       telephone: profile.phone,
       url: profile.linkedin,
@@ -466,7 +466,7 @@ function Hero() {
     <section className="hero-section" id="top" aria-labelledby="hero-title">
       <div className="hero-grid">
         <Reveal className="hero-copy">
-          <p className="eyebrow">Frontend Engineer</p>
+          <p className="eyebrow">Full Stack Engineer</p>
           <h1 id="hero-title">{profile.name}</h1>
           <p className="hero-role">{profile.role}</p>
           <p className="hero-summary">
@@ -746,11 +746,11 @@ function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Open to frontend engineering opportunities and product work."
+      title="Open to Full Stack engineering opportunities and product work."
     >
       <Reveal className="contact-panel">
         <p>
-          For recruiter conversations, freelance work, or frontend product
+          For recruiter conversations, freelance work, or Full Stack product
           roles, use any of the channels below.
         </p>
         <div className="contact-grid">
