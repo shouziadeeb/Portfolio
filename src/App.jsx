@@ -116,7 +116,12 @@ const skillGroups = [
   },
   {
     title: "AI Tools",
-    skills: ["Cursor AI", "ChatGPT","Claude AI", "AI-powered Product Workflows"],
+    skills: [
+      "Cursor AI",
+      "ChatGPT",
+      "Claude AI",
+      "AI-powered Product Workflows",
+    ],
   },
 ];
 
@@ -475,8 +480,8 @@ function Hero() {
             </a>
             <a
               className="button"
-              href="/Shouzab_Farooqui_Resume.pdf"
-              download="Shouzab_Farooqui_Resume.pdf"
+              href="/shouzab_august.pdf"
+              download="shouzab_august.pdf"
               type="application/pdf"
             >
               Resume <FaDownload aria-hidden="true" />
