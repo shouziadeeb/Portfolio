@@ -156,30 +156,7 @@ const education = [
 const createScreenshotUrl = (url) =>
   `https://image.thum.io/get/width/1200/crop/760/noanimate/${encodeURIComponent(url)}`;
 
-const featuredProjects = [
-  {
-    title: "Gym Management & Discovery Platform",
-    liveUrl: "https://gym-management-green.vercel.app/",
-    githubUrl: "",
-    screenshot: createScreenshotUrl("https://gym-management-green.vercel.app/"),
-    description:
-      "Cross-platform Gym Management & Discovery platform enabling gym owners to handle memberships, attendance, payments, and operations while members discover and join gyms.",
-    highlights: [
-      "Multi-tenant architecture with role-based access control",
-      "Android, iOS, and Web support using React Native + Expo",
-      "Phone OTP, Email Authentication, and Google OAuth",
-      "QR attendance workflow with real-time attendance analytics",
-    ],
-    tags: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "Supabase",
-      "Authentication",
-      "QR System",
-      "Mobile Development",
-    ],
-  },
+const aiEraProjects = [
   {
     title: "AI-Powered Mock Interview Platform",
     liveUrl: "https://ai-interview-tau-eight.vercel.app/",
@@ -204,9 +181,32 @@ const featuredProjects = [
       "Frontend Engineering",
     ],
   },
+  {
+    title: "Gym Management & Discovery Platform",
+    liveUrl: "https://gym-management-green.vercel.app/",
+    githubUrl: "",
+    screenshot: createScreenshotUrl("https://gym-management-green.vercel.app/"),
+    description:
+      "Cross-platform Gym Management & Discovery platform enabling gym owners to handle memberships, attendance, payments, and operations while members discover and join gyms.",
+    highlights: [
+      "Multi-tenant architecture with role-based access control",
+      "Android, iOS, and Web support using React Native + Expo",
+      "Phone OTP, Email Authentication, and Google OAuth",
+      "QR attendance workflow with real-time attendance analytics",
+    ],
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Supabase",
+      "Authentication",
+      "QR System",
+      "Mobile Development",
+    ],
+  },
 ];
 
-const secondaryProjects = [
+const preAiEraProjects = [
   {
     title: "Food Delivery Web Application",
     liveUrl: "https://shouziadeeb.vercel.app/",
@@ -241,6 +241,11 @@ const secondaryProjects = [
       "Frontend",
     ],
   },
+];
+
+const projectGroups = [
+  { title: "AI Era Projects", projects: aiEraProjects },
+  { title: "Projects before the AI era", projects: preAiEraProjects },
 ];
 
 function App() {
@@ -322,7 +327,7 @@ function App() {
 
   const projectSchema = useMemo(
     () =>
-      [...featuredProjects, ...secondaryProjects].map((project) => ({
+      projectGroups.flatMap((group) => group.projects).map((project) => ({
         "@type": "SoftwareSourceCode",
         name: project.title,
         url: project.liveUrl,
@@ -625,30 +630,40 @@ function Experience() {
 }
 
 function Projects() {
-  const allProjects = [...featuredProjects, ...secondaryProjects];
+  let projectIndex = 0;
 
   return (
     <Section
       id="projects"
-      eyebrow="Featured Projects"
+      eyebrow="Projects"
       title="Production work that demonstrates architecture, scalability, and frontend impact."
     >
       <div className="projects-layout">
-        <div
-          className="projects-grid"
-          role="list"
-          aria-label="Project showcase"
-        >
-          {allProjects.map((project, index) => (
-            <Reveal
-              key={project.title}
-              className="project-reveal"
-              delay={index * 0.07}
+        {projectGroups.map((group) => (
+          <div key={group.title} className="project-group">
+            <h3 className="project-group-title">{group.title}</h3>
+            <div
+              className="projects-grid"
+              role="list"
+              aria-label={group.title}
             >
-              <ProjectCard project={project} />
-            </Reveal>
-          ))}
-        </div>
+              {group.projects.map((project) => {
+                const delay = projectIndex * 0.07;
+                projectIndex += 1;
+
+                return (
+                  <Reveal
+                    key={project.title}
+                    className="project-reveal"
+                    delay={delay}
+                  >
+                    <ProjectCard project={project} />
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   );
@@ -658,7 +673,7 @@ function ProjectCard({ project }) {
   return (
     <article className="project-card" role="listitem">
       <div className="project-content">
-        <h3>{project.title}</h3>
+        <h4>{project.title}</h4>
         <p>{project.description}</p>
         <ul className="project-highlights">
           {project.highlights.map((highlight) => (
